@@ -1,0 +1,1 @@
+<?php header('Content-Type: application/manifest+json'); echo json_encode(['name'=>'SERV Hospitality','short_name'=>'SERV','start_url'=>'./index.php','display'=>'standalone','background_color'=>'#F7FAFC','theme_color'=>'#2E6F8E','icons'=>[['src'=>'assets/icon.svg','sizes'=>'any','type'=>'image/svg+xml','purpose'=>'any maskable']]]); ?>

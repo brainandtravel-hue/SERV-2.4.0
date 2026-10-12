@@ -1,0 +1,9 @@
+SERV UI COLOUR SYSTEM
+
+Primary: #1E5A6B
+Accent: #F4B400
+Background: #E8F0F7
+Text: #0F2D3A
+Border: #D9E3EA
+
+The interface uses white cards/surfaces, deep teal navigation/header areas, gold primary actions, and light ice-blue backgrounds.
