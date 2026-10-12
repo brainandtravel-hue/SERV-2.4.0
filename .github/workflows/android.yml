@@ -1,1 +1,58 @@
+name: Build SERV Android APK
 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'android/**'
+      - '.github/workflows/android.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Install Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14'
+
+      - name: Check Android project
+        run: |
+          if [ ! -f android/settings.gradle.kts ] && [ ! -f android/settings.gradle ]; then
+            echo "ERROR: Android settings.gradle file is missing."
+            exit 1
+          fi
+
+          if [ ! -f android/app/build.gradle.kts ] && [ ! -f android/app/build.gradle ]; then
+            echo "ERROR: Android app build.gradle file is missing."
+            exit 1
+          fi
+
+          echo "Android project files found."
+
+      - name: Build debug APK
+        run: gradle -p android assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: SERV-Android-APK
+          path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14
