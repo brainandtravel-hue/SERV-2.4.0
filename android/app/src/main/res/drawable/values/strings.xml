@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SERV</string>
+    <string name="notification_channel_orders">SERV Orders</string>
+    <string name="notification_channel_requests">SERV Service Requests</string>
+    <string name="notification_channel_general">SERV General</string>
+    <string name="notification_channel_voice">SERV Voice Alerts</string>
+</resources>
