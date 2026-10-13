@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SERV</string>
-    <string name="notification_channel_orders">SERV Orders</string>
-    <string name="notification_channel_requests">SERV Service Requests</string>
-    <string name="notification_channel_general">SERV General</string>
-    <string name="notification_channel_voice">SERV Voice Alerts</string>
+    <string name="notification_channel_orders">Order Notifications</string>
+    <string name="notification_channel_requests">Request Notifications</string>
+    <string name="notification_channel_general">General Notifications</string>
+    <string name="notification_channel_voice">Voice Notifications</string>
 </resources>
